@@ -3,7 +3,6 @@
 
 var forwarder = require('beamjs').forwarder;
 var backend = require('beamjs').backend();
-var behaviour = backend.behaviour();
 
 module.exports = function (options) {
 
@@ -37,6 +36,11 @@ module.exports = function (options) {
             (typeof behaviour_options.host !== 'string' ||
                 behaviour_options.host.length === 0))
             throw new Error('Invalid behaviour host');
+        var behaviour = backend.behaviour({
+
+            overwritePath: !behaviour_options.relative,
+            skipSameRoutes: true
+        });
         behaviours[behaviour_options.name] = behaviour({
 
             name: behaviour_options.name,

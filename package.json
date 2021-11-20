@@ -1,6 +1,6 @@
 {
   "name": "proxy-behaviour",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A behavior used with BeamJS framework to proxy http/s requests and socket connections with or without rules.",
   "main": "index.js",
   "scripts": {
